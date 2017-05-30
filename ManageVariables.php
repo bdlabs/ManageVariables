@@ -17,7 +17,7 @@ class ManageVariables
     }
     public static function getALL()
     {
-        print_r(self::$mem);
+        return self::$mem;
     }
 }
 
