@@ -1,36 +1,36 @@
 <?
 class ManageVariables
 {
-    private static $mem = array();
+    private static $MEMORY = array();
 
     public static function set($namevariables, $value)
     {
-        self::$mem[$namevariables] = $value;
+        self::$MEMORY[$namevariables] = $value;
     }
     public static function get($namevariables)
     {
-        return self::$mem[$namevariables];
+        return self::$MEMORY[$namevariables];
     }
     public static function exist($namevariables)
     {
-        return isset(self::$mem[$namevariables]);
+        return isset(self::$MEMORY[$namevariables]);
     }
     public static function getALL()
     {
-        return self::$mem;
+        return self::$MEMORY;
     }
 }
 
 /**
  * Set Variable
  */
-function _set($name, $value){
-    Config::set(strtolower($name), $value);
+function memSet($name, $value){
+    ManageVariables::set(strtolower($name), $value);
 }
 
 /**
  * Get Variable
  */
-function _get($name){
-    return Config::get(strtolower($name));
+function memGet($name){
+    return ManageVariables::get(strtolower($name));
 }
