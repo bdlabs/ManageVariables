@@ -24,13 +24,15 @@ class ManageVariables
 /**
  * Set Variable
  */
-function memSet($name, $value){
+function memSet($name, $value)
+{
     ManageVariables::set(strtolower($name), $value);
 }
 
 /**
  * Get Variable
  */
-function memGet($name){
+function memGet($name)
+{
     return ManageVariables::get(strtolower($name));
 }
